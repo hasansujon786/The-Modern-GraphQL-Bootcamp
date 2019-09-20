@@ -1,10 +1,11 @@
 const Query = {
-  users(parent, args, { db }, info) {
-    if (!args.query) {
+  users(parent, { query }, { db }, info) {
+    // query will be user's name
+    if (!query) {
       return db.users
     }
     return db.users.filter(user => {
-      return user.name.toLowerCase().includes(args.query.toLowerCase())
+      return user.name.toLowerCase().includes(query.toLowerCase())
     })
   },
   me() {
