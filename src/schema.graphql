@@ -1,5 +1,6 @@
 # Type definitions (shema)
 # Scallar types - String, Boolean, Int, Float, ID
+
 type Query {
   users(query: String): [User!]!
   posts(query: String): [Post!]!
@@ -24,8 +25,8 @@ type Mutation {
 
 type Subscription {
   count: Int!
-  comment(postId: ID!): Comment!
-  post: Post!
+  comment(postId: ID!): CommentSubscribtionPayload!
+  post: PostSubscribtionPayload!
 }
 
 ### INPUTS ###
@@ -85,4 +86,20 @@ type Comment {
   text: String!
   auther: User!
   post: Post!
+}
+
+enum MutationType {
+  CREATED
+  UPDATED
+  DELETED
+}
+
+type PostSubscribtionPayload {
+  method: MutationType!
+  data: Post!
+}
+
+type CommentSubscribtionPayload {
+  method: MutationType!
+  data: Comment!
 }
