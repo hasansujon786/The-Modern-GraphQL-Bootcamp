@@ -2,7 +2,7 @@ import uuid from 'uuid/v4'
 
 const Mutation = {
   createUser(parent, args, { db }, info) {
-    const isEmailTaken = db.users.some(user => user.email == args.data.email)
+    const isEmailTaken = db.users.some(user => user.email === args.data.email)
     if (isEmailTaken) {
       throw new Error('Email Taken.')
     }

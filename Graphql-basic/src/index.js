@@ -23,6 +23,6 @@ const server = new GraphQLServer({
   context: { db, pubSub }
 })
 
-server.start({ port: 4000 }, ({ port }) => {
+server.start({ port: 5000 }, ({ port }) => {
   console.log(`Server is running at http://localhost:${port}`)
 })
