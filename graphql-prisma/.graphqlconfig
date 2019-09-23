@@ -1,0 +1,12 @@
+{
+  "projects": {
+    "prisma": {
+      "schemaPath": "src/generated/prisma.graphql",
+      "extensions": {
+        "endpoints": {
+          "default": "https://eu1.prisma.sh/hasan-mahmud-c7cfac/prisma-graphql-api/dev"
+        }
+      }
+    }
+  }
+}
